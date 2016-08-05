@@ -1,0 +1,49 @@
+.share-btn {
+  display: inline-block;
+  padding: 8px 20px 8px 50px;
+  border: 3px solid #fff;
+  font-family: $Raleway-ExtraBold;
+  text-transform: uppercase;
+  @include border-radius(25px);
+  color: #fff;
+  @include transition(all .3s);
+  position: relative;
+  letter-spacing: 1px;
+  font-size: 13px;
+
+  &:before {
+    @include pseudo-block($top: 7px, $left: 15px);
+    content: 'share';
+    font-family: $SSSocialRegular;
+    font-size: 19px;
+  }
+
+  &:hover {
+    color: #c5b3b1;
+    background: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn-wrap{
+
+  &.style-a .btn {
+    display: inline-block;
+    padding: 8px 30px;
+    border: 3px solid #fff;
+    font-family: $Raleway-ExtraBold;
+    text-transform: uppercase;
+    @include border-radius(25px);
+    color: #fff;
+    @include transition(all .3s);
+    position: relative;
+    letter-spacing: 1px;
+    font-size: 13px;
+
+    &:hover {
+      color: #c5b3b1;
+      background: #fff;
+      text-decoration: none;
+    }
+  }
+}

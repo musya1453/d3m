@@ -1,0 +1,39 @@
+.header-wrapper {
+  @include clearfix();
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  padding: 0 100px;
+
+  .right-part {
+    float: right;
+  }
+
+  .logo {
+    float: left;
+  }
+
+  .share-btn {
+    margin-right: 30px;
+  }
+
+  .menu-btn {
+    color: #fff;
+    font-size: 13px;
+    font-family: $Raleway-ExtraBold;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 35px;
+
+    &:before {
+      @include pseudo-block($top: 50%, $left: 0);
+      @include translateY(-50%);
+      @include oneline-sprite-box($icons, btn);
+    }
+  }
+
+  .menu-wrapper {
+    display: none;
+  }
+}
