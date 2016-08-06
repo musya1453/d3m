@@ -25,7 +25,7 @@
   }
 }
 
-.btn-wrap{
+.btn-wrap {
 
   &.style-a .btn {
     display: inline-block;
@@ -44,6 +44,24 @@
       color: #c5b3b1;
       background: #fff;
       text-decoration: none;
+    }
+  }
+
+  &.style-b .btn {
+    display: inline-block;
+    padding: 8px 30px;
+    font-family: $Raleway-ExtraBold;
+    text-transform: uppercase;
+    @include border-radius(25px);
+    color: #fff;
+    @include transition(all .3s);
+    position: relative;
+    letter-spacing: 1px;
+    font-size: 13px;
+    background: linear-gradient(to right, #8e0e0f, #b04d82);
+
+    &:hover {
+      opacity: .7;
     }
   }
 }
