@@ -44,3 +44,7 @@ h1, h2 {
   text-transform: uppercase;
   font-family: $Raleway-ExtraBold;
 }
+
+input {
+  outline: none !important;
+}

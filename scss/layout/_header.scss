@@ -10,6 +10,24 @@
     float: right;
   }
 
+  .close-bg {
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all .3s);
+
+    .open-menu & {
+      opacity: .8;
+      visibility: visible;
+    }
+  }
+
   .logo {
     float: left;
   }
@@ -34,6 +52,103 @@
   }
 
   .menu-wrapper {
-    display: none;
+    position: fixed;
+    right: -315px;
+    top: 0;
+    bottom: 0;
+    width: 314px;
+    z-index: 10;
+    @include transition(all .3s);
+
+    .open-menu & {
+      right: 0;
+    }
+
+    .btn-close {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      @include translateY(-50%);
+      display: block;
+      @include oneline-sprite-box($icons, close);
+      opacity: 1;
+    }
+
+    &:before {
+      @include pseudo-block($top: 140px, $left: 0, $bottom: 0, $right: 0);
+      background: linear-gradient(#a83e67 0%, #92161e 100%);
+      z-index: -1;
+    }
+
+    .nav-top {
+      background: #89365a;
+      padding: 50px 40px;
+      position: relative;
+    }
+
+    .nav ul {
+      padding: 40px;
+      margin: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 20px;
+
+        a {
+          color: #de688e;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-family: $Raleway-ExtraBold;
+          letter-spacing: 2px;
+          @include transition(all .3s);
+
+          &:hover {
+            color: #6d1839;
+          }
+        }
+
+        &.active a {
+          color: #fff;
+        }
+      }
+    }
+
+    .social {
+      margin: 0;
+      padding: 0 40px;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 50px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: block;
+        }
+
+        &.soc-1 a {
+          @include oneline-sprite-box($icons, soc-1a);
+        }
+
+        &.soc-2 a {
+          @include oneline-sprite-box($icons, soc-2a);
+        }
+
+        &.soc-3 a {
+          @include oneline-sprite-box($icons, soc-3a);
+        }
+
+        &.soc-4 a {
+          @include oneline-sprite-box($icons, soc-4a);
+        }
+      }
+    }
   }
 }

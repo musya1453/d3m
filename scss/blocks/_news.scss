@@ -1,0 +1,89 @@
+.b-news {
+
+  .row > div {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .item {
+    display: block;
+    height: 435px;
+    background: #fff;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    @include transition(all .3s);
+
+    &:before {
+      @include pseudo-block($top: 0, $left: 0, $bottom: 0, $right: 0);
+      background: linear-gradient(to right, #8e0e0f, #b04d82);
+      opacity: 0;
+      @include transition(all .3s);
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #fff;
+
+      &:before {
+        opacity: 1;
+      }
+
+      .img img {
+        @include transform(scale(1.08));
+      }
+    }
+
+    .img {
+      overflow: hidden;
+      height: 183px;
+      position: relative;
+
+      img {
+        @include transition(all 1.6s);
+      }
+
+      .like {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        font-size: 14px;
+        color: #fff;
+        padding-left: 30px;
+        @include transition(all .3s);
+        opacity: .7;
+        letter-spacing: 2px;
+
+        &:before {
+          @include pseudo-block($top: 50%, $left: 0);
+          @include translateY(-50%);
+          @include oneline-sprite-box($icons, like);
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .text {
+      padding: 55px 37px 0 37px;
+
+      p {
+        font-size: 24px;
+        font-family: $Raleway-ExtraBold;
+      }
+    }
+
+    .title {
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 35px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

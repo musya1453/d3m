@@ -1,0 +1,79 @@
+.b-event {
+
+  .row > div {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .item {
+    display: block;
+    color: #333;
+    background: #fff;
+    height: 570px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    @include transition(all .3s);
+
+    &:before {
+      @include pseudo-block($top: 0, $left: 0, $bottom: 0, $right: 0);
+      background: linear-gradient(to right, #8e0e0f, #b04d82);
+      opacity: 0;
+      @include transition(all .3s);
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #fff;
+
+      &:before {
+        opacity: 1;
+      }
+
+      .img img {
+        @include transform(scale(1.08));
+      }
+    }
+
+    .img {
+      height: 184px;
+      overflow: hidden;
+
+      img {
+        @include transition(all 1.4s);
+      }
+    }
+
+    .title {
+      margin-bottom: 40px;
+      font-size: 14px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      strong {
+        font-family: $Raleway-ExtraBold;
+      }
+    }
+
+    .date {
+      margin-bottom: 18px;
+      font-family: $Raleway-ExtraBold;
+      font-size: 60px;
+      display: block;
+    }
+
+    .text {
+      padding: 60px 40px 0 40px;
+    }
+
+    p {
+      line-height: 1.4;
+
+      i {
+        font-size: 22px;
+        font-family: $Lora-Italic;
+      }
+    }
+  }
+}

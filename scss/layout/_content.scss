@@ -4,6 +4,21 @@
   position: relative;
 }
 
+.loader {
+  position: relative;
+  height: 170px;
+
+  &:before {
+    @include pseudo-block($top: 50%, $left: 50%);
+    @include translate(-50%, -50%);
+    background: image-url('bg/ajax-loader.gif');
+    width: 100px;
+    height: 100px;
+    @include background-size(cover);
+    opacity: .6;
+  }
+}
+
 p i {
   font-family: $Lora-BoldItalic;
   font-size: 24px;
@@ -16,6 +31,105 @@ p i {
   .inner {
     height: 900px;
     padding: 70px 10px;
+  }
+
+  &.height-a .inner {
+    height: 516px;
+  }
+
+  &.style-a {
+    background: image-url('bg/bg-a.jpg') no-repeat center;
+    @include background-size(cover);
+
+    .inner {
+      padding: 0;
+      text-align: center;
+
+      .desc {
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+      }
+    }
+  }
+
+  &.style-b {
+    background: image-url('bg/bg-b.jpg') no-repeat center;
+    @include background-size(cover);
+
+    .inner {
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &.style-c {
+    background: image-url('bg/bg-c.jpg') no-repeat center;
+    @include background-size(cover);
+
+    .inner {
+      padding: 0;
+    }
+
+    .desc {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: auto;
+      @include translateY(-50%);
+    }
+  }
+
+  &.style-d {
+    background: image-url('bg/bg-d.jpg') no-repeat center;
+    @include background-size(cover);
+
+    .inner {
+      padding: 0;
+    }
+
+    .desc {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: auto;
+      @include translateY(-50%);
+    }
+  }
+
+  &.style-e {
+    background: image-url('bg/bg-e.jpg') no-repeat center;
+    @include background-size(cover);
+
+    .inner {
+      padding: 0;
+    }
+
+    .desc {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: auto;
+      @include translateY(-50%);
+    }
+  }
+
+  &.style-f {
+    background: image-url('bg/bg-f.jpg') no-repeat center;
+    @include background-size(cover);
+
+    .inner {
+      padding: 0;
+      text-align: center;
+
+      .desc {
+        bottom: auto;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+      }
+    }
   }
 
   .desc {
@@ -66,6 +180,51 @@ p i {
   color: #fff;
   background: image-url('bg/services.jpg') no-repeat center;
   @include background-size(cover);
+  position: relative;
+
+  &.style-a {
+    background: image-url('bg/services-a.jpg') no-repeat center;
+    @include background-size(cover);
+    padding: 0;
+
+    .inner {
+      height: 620px;
+    }
+  }
+
+  &.style-b {
+    background: image-url('bg/services-b.jpg') no-repeat center;
+    @include background-size(cover);
+    padding: 0;
+
+    .inner {
+      height: 620px;
+    }
+  }
+
+  .desc {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    @include translate(0, -50%);
+    padding-top: 80px;
+
+    blockquote {
+      border: none;
+
+      &:before {
+        @include pseudo-block($top: 0, $left: 50%);
+        @include translateX(-50%);
+        @include oneline-sprite-box($icons, bq)
+      }
+    }
+
+    span {
+      font-family: $Lora-BoldItalic;
+      color: #777777;
+    }
+  }
 
   p {
     margin: 0 0 25px;
@@ -125,5 +284,301 @@ p i {
   img {
     width: 100%;
     display: block;
+  }
+}
+
+.section-text {
+  padding: 105px 0 160px;
+
+  .col-two {
+
+    .col {
+
+      &:first-child {
+        padding: 0 40px 0 0;
+      }
+
+      &:last-child {
+        padding: 0 0 0 40px;
+      }
+    }
+  }
+
+  .row {
+    margin-bottom: 105px;
+    padding-bottom: 120px;
+    border-bottom: 1px solid #bdbdbd;
+
+    &:last-child {
+      border-bottom: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  h2 {
+    margin: 0 0 60px;
+  }
+}
+
+.section-items {
+  padding: 130px 0 160px;
+
+  h2 {
+    margin: 0 0 100px;
+  }
+
+  .col-lg-4 {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .img {
+    position: relative;
+
+    &:before {
+      @include pseudo-block($bottom: 0, $left: 0, $right: 0);
+      height: 0;
+      background: image-url('bg/before-hover.png');
+      @include background-size(cover);
+      @include transition(all .3s);
+    }
+
+    span {
+      @include text-hide();
+      @include oneline-sprite-box($icons, in);
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      @include translateX(-50%);
+      opacity: 0;
+      @include transition(all .4s);
+    }
+  }
+
+  a {
+    text-align: center;
+    color: #242424;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: #242424;
+    }
+  }
+
+  .info {
+    padding: 25px 0;
+    @include transition(all .3s);
+    position: relative;
+    z-index: 0;
+
+    &:before {
+      @include pseudo-block($top: 0, $left: 0, $bottom: 0, $right: 0);
+      background: linear-gradient(to right, #8e0e0f, #b04d82);
+      opacity: 0;
+      @include transition(all .3s);
+      z-index: -1;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .item:hover {
+
+    .img:before {
+      height: 230px;
+    }
+
+    span {
+      opacity: 1;
+    }
+
+    .info {
+      color: #fff;
+
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.section-contact {
+  padding: 84px 0 140px;
+
+  h2 {
+    margin: 0 0 58px;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  .col-lg-8 {
+    padding: 0;
+  }
+
+  .row {
+    border-bottom: 1px solid #bdbdbd;
+    padding-bottom: 90px;
+    margin-bottom: 140px;
+
+    &:last-child {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+}
+
+.section-search {
+  padding: 40px 0;
+  background: #fff;
+
+  .btn-wrap {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    padding: 0;
+    margin: 0;
+    font-family: $Raleway-ExtraBold;
+  }
+
+  .row > div {
+    position: static;
+  }
+}
+
+.section-events {
+  padding: 80px 0 90px;
+
+  h2 {
+    margin: 0 0 70px;
+  }
+}
+
+.section-event-desc {
+  padding: 80px 0;
+
+  .inner {
+
+    h2 {
+      margin: 0 0 18px;
+    }
+
+    & > .row {
+      margin-bottom: 160px;
+
+      p {
+        line-height: 1.8;
+        margin-bottom: 45px;
+
+        span {
+          font-family: $Lora-Italic;
+          color: #999;
+          font-size: 24px;
+          display: block;
+        }
+      }
+
+      & > div:nth-child(2) {
+        padding-right: 90px;
+
+        h2 {
+          margin-bottom: 65px;
+        }
+      }
+    }
+  }
+}
+
+.section-news {
+  padding: 80px 0;
+}
+
+.section-media {
+  overflow: hidden;
+
+  .row div {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.section-faq {
+  padding: 100px 0;
+
+  h2 {
+    margin: 0 0 60px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      border-top: 1px solid #cccccc;
+      @include transition(all .3s);
+
+      &.active {
+
+        .text {
+          opacity: 1;
+          position: relative;
+        }
+
+        .title {
+          color: #333;
+
+          &:before {
+            @include transform(translateY(-50%) rotate(90deg))
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom: 1px solid #cccccc;
+      }
+    }
+
+    .title {
+      color: #c9c9c9;
+      font-family: $Lora-BoldItalic;
+      font-size: 24px;
+      display: block;
+      text-decoration: none;
+      position: relative;
+      padding: 30px 0 30px 100px;
+
+      &:before {
+        @include pseudo-block($top: 50%, $left: 0);
+        @include oneline-sprite-box($icons, acordion);
+        @include translateY(-50%);
+        @include transition(all .3s);
+      }
+
+      &:hover {
+        color: #333;
+      }
+    }
+
+    .text {
+      padding: 0 0 40px 100px;
+      opacity: 0;
+      @include transition(all .3s);
+      position: absolute;
+    }
   }
 }

@@ -22,6 +22,17 @@
 
 
 @font-face {
+  font-family: 'Lora-Italic';
+  src: url('../fonts/Lora-Italic.eot');
+  src: url('../fonts/Lora-Italic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Lora-Italic.woff') format('woff'),
+  url('../fonts/Lora-Italic.ttf') format('truetype'),
+  url('../fonts/Lora-Italic.svg#Lora-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Lora-BoldItalic';
   src: url('../fonts/Lora-BoldItalic.eot');
   src: url('../fonts/Lora-BoldItalic.eot?#iefix') format('embedded-opentype'),

@@ -1,5 +1,8 @@
 .footer-wrapper {
   padding: 100px 0;
+  font-size: 16px;
+  font-family: $roboto-regular;
+  background: #ffffff;
 
   .logo {
     margin-bottom: 70px;
@@ -21,15 +24,64 @@
     .title {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 15px;
       color: #dfdfdf;
       text-transform: uppercase;
       font-size: 11px;
+      font-family: $roboto-bold;
     }
 
     ul {
       margin: 0;
       padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: #242424;
+      }
+    }
+
+    .social {
+      margin-bottom: 25px;
+
+      li {
+        display: inline-block;
+        margin-right: 25px;
+        vertical-align: middle;
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          display: block;
+        }
+
+        &.soc-1 a {
+          @include oneline-sprite-box($icons, soc-1);
+        }
+
+        &.soc-2 a {
+          @include oneline-sprite-box($icons, soc-2);
+        }
+
+        &.soc-3 a {
+          @include oneline-sprite-box($icons, soc-3);
+        }
+
+        &.soc-4 a {
+          @include oneline-sprite-box($icons, soc-4);
+        }
+
+        &.soc-5 a {
+          @include oneline-sprite-box($icons, soc-5);
+        }
+      }
     }
   }
 }
