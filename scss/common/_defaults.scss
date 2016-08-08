@@ -48,3 +48,19 @@ h1, h2 {
 input {
   outline: none !important;
 }
+
+.like {
+  position: relative;
+  padding-left: 35px;
+  color: #333;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:before {
+    @include pseudo-block($left: 0, $top: 50%);
+    @include translateY(-50%);
+    @include oneline-sprite-box($icons, like-a);
+  }
+}
